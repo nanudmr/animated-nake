@@ -1,0 +1,85 @@
+---
+
+---
+
+<style lang="scss">
+    .herobox {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+
+        h1 {
+            font-size: 4rem;
+            text-align: center;
+        }
+
+        .hero-bg {
+            display: flex;
+            position: absolute;
+            bottom: 0;
+            align-items: end;
+            z-index: -1;
+
+            > * {
+                border: 1px solid #D0D0D0;
+                // border-bottom: 0px;
+                height: 110vh;
+                width: 180px;
+                transform-origin: center;
+            }
+        }
+
+    }
+</style>
+
+
+<div class="herobox">
+    <h1 class="heading">Improve your <br> Digital presence <br> quality & performance.</h1>
+
+    <div class="hero-bg">
+        <div class="box1">&nbsp</div>
+
+        <div class="box2"></div>
+
+        <div class="box3"></div>
+
+        <div class="box4"></div>
+
+        <div class="box5"></div>
+
+        <div class="box6"></div>
+
+        <div class="box7"></div>
+    </div>
+</div>
+
+<script>
+    import { gsap } from "gsap";
+
+    const bgAnimation = gsap.timeline({ repeat: 0, defaults: { duration: 2 } })
+
+    bgAnimation.to(".box3", { height: "30vh" }, 0)
+    bgAnimation.to(".box4", { height: "50vh" }, 0)
+    bgAnimation.to(".box5", { height: "20vh" }, 0)
+
+    bgAnimation.to(".box3", { height: "70vh" }, 2)
+    bgAnimation.to(".box4", { height: "20vh" }, 2)
+    bgAnimation.to(".box5", { height: "50vh" }, 2)
+
+    bgAnimation.to(".box3", { height: "20vh" }, 4)
+    bgAnimation.to(".box4", { height: "70vh" }, 4)
+    bgAnimation.to(".box5", { height: "30vh" }, 4)
+
+    bgAnimation.to(".box3", { height: "30vh" }, 6)
+    bgAnimation.to(".box4", { height: "30vh" }, 6)
+    bgAnimation.to(".box5", { height: "30vh" }, 6)
+
+    bgAnimation.to(".box3", { y: "-35vh" }, 8)
+    bgAnimation.to(".box4", { y: "-35vh" }, 8)
+    bgAnimation.to(".box5", { y: "-35vh" }, 8)
+
+</script>

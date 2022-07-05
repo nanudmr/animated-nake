@@ -1,0 +1,132 @@
+---
+const navLinks = [
+    {
+        name: "SERVICES",
+        url: "#services"
+    },
+    {
+        name: "ABOUT",
+        url: "#about"
+    },
+    {
+        name: "PORTFOLIO",
+        url: "#portfolio"
+    },
+    {
+        name: "CONTACT",
+        url: "#contact"
+    }
+]
+
+---
+
+<style lang="scss">
+    header {
+        position: absolute;
+        width: 100%;
+        z-index: 10;
+        nav {
+
+            .nav-content {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                height: 6.4rem;
+                padding: 0 1.6rem;
+
+                .header-logo {}
+
+                .hamburger {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+
+                    span {
+                        width: 4rem;
+                        height: 0.2rem;
+                        background-color: black;
+                        display: block;
+                    }
+                }
+
+            }
+
+            .nav-links {
+                overflow: hidden;
+                height: 0px;
+            }
+
+        }
+    }
+</style>
+
+<header>
+
+    <nav>
+
+        <div class="nav-content">
+
+            <h1 class="header-logo">LOGO</h1>
+
+            <div class="hamburger" id="hamburger">
+                <span class="line1"></span>
+                <span class="line2"></span>
+                <span class="line3"></span>
+            </div>
+
+        </div>
+
+        <div class="nav-links">
+            <ul class="menu-links" id="menuLinks" role="navigation">
+                {navLinks.map(link => (
+                <li class="link-container">
+                    <div class="link">
+                        <a href="${link.url}">{link.name}</a>
+                    </div>
+                </li>
+                ))}
+            </ul>
+        </div>
+
+
+
+    </nav>
+
+
+</header>
+
+
+
+<script>
+
+    import { gsap } from "gsap";
+
+    gsap.to(".line1, .line3", { x: -8 })
+
+    let menuToggle = true
+
+    const menuOpener = gsap.timeline({ defaults: { duration: 0.15 } })
+    menuOpener.pause()
+
+    menuOpener.to(".line2", {width:0, duration:0.15})
+
+    menuOpener.to(".line1", { y: 10 }, 0.3)
+    menuOpener.to(".line3", { y: -10 }, 0.3)
+
+    menuOpener.to(".line1", {rotation:-40}, 0.6)
+    menuOpener.to(".line3", {rotation:40}, 0.6)
+
+    document.querySelector(".hamburger").addEventListener("click", () => {
+        if (menuToggle) {
+            menuOpener.play(0)
+            console.log("open")
+            menuToggle = false
+        } else {
+            menuOpener.reverse()
+            console.log("close")
+            menuToggle = true
+        }
+
+    })
+
+</script>

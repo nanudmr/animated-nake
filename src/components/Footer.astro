@@ -1,0 +1,45 @@
+---
+
+const footLinks = [
+    {
+        name: "SERVICES",
+        url: "#services"
+    },
+    {
+        name: "ABOUT",
+        url: "#about"
+    },
+    {
+        name: "PORTFOLIO",
+        url: "#portfolio"
+    },
+    {
+        name: "CONTACT",
+        url: "#contact"
+    }
+]
+
+---
+
+<style lang="scss">
+    footer{
+        background-color: red;
+    }
+
+
+</style>
+
+<footer>
+
+    <div class="foot-links">
+        <ul class="menu-links" id="menuLinks" role="navigation">
+            {footLinks.map(link => (
+                <li>
+                    <a href="${link.url}">{link.name}</a>
+                </li>
+            ))}
+
+        </ul>
+    </div>
+        
+</footer>
