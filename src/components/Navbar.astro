@@ -108,7 +108,10 @@ const navLinks = [
     const menuOpener = gsap.timeline({ defaults: { duration: 0.15 } })
     menuOpener.pause()
 
-    menuOpener.to(".line2", {width:0, duration:0.15})
+    menuOpener.to(".line1", {x:0, duration:0.15}, 0)
+    menuOpener.to(".line3", {x:0, duration:0.15}, 0)
+
+    menuOpener.to(".line2", {width:0, duration:0.3}, 0.4)
 
     menuOpener.to(".line1", { y: 10 }, 0.3)
     menuOpener.to(".line3", { y: -10 }, 0.3)
