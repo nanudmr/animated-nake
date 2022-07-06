@@ -25,6 +25,7 @@ const navLinks = [
         position: absolute;
         width: 100%;
         z-index: 10;
+
         nav {
 
             .nav-content {
@@ -58,6 +59,17 @@ const navLinks = [
 
         }
     }
+
+    @media screen and (min-width: 480px) {
+        header {
+            nav {
+                .nav-content {
+                    padding: 0 4.6rem;
+                }
+
+            }
+        }
+    }
 </style>
 
 <header>
@@ -66,7 +78,7 @@ const navLinks = [
 
         <div class="nav-content">
 
-            <h1 class="header-logo">LOGO</h1>
+            <img src="/nakecode-logo.svg" alt="">
 
             <div class="hamburger" id="hamburger">
                 <span class="line1"></span>
@@ -108,16 +120,16 @@ const navLinks = [
     const menuOpener = gsap.timeline({ defaults: { duration: 0.15 } })
     menuOpener.pause()
 
-    menuOpener.to(".line1", {x:0, duration:0.15}, 0)
-    menuOpener.to(".line3", {x:0, duration:0.15}, 0)
+    menuOpener.to(".line1", { x: 0, duration: 0.15 }, 0)
+    menuOpener.to(".line3", { x: 0, duration: 0.15 }, 0)
 
-    menuOpener.to(".line2", {width:0, duration:0.3}, 0.4)
+    menuOpener.to(".line2", { width: 0, duration: 0.1 }, 0.4)
 
     menuOpener.to(".line1", { y: 10 }, 0.3)
     menuOpener.to(".line3", { y: -10 }, 0.3)
 
-    menuOpener.to(".line1", {rotation:-40}, 0.6)
-    menuOpener.to(".line3", {rotation:40}, 0.6)
+    menuOpener.to(".line1", { rotation: -40 }, 0.6)
+    menuOpener.to(".line3", { rotation: 40 }, 0.6)
 
     document.querySelector(".hamburger").addEventListener("click", () => {
         if (menuToggle) {

@@ -13,6 +13,10 @@ html{
     font-family: 'Space Grotesk', sans-serif;
 	font-size: 1.8rem;
 }
+
+body{
+    background-color: #1B1B1B;
+}
 ul{
     list-style: none;
 }
