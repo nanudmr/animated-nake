@@ -35,7 +35,7 @@
                 height: 110vh;
                 width: 180px;
                 // transform-origin: center;
-                outline: 1px #D0D0D0 solid;
+                outline: 1px black solid;
                 /* inner stroke */
                 outline-offset: -0.5px;
                 /* negative border width + outline width */
@@ -45,7 +45,7 @@
 
     }
 
-    @media screen and (min-width: 480px) {
+    @media screen and (min-width: 900px) {
         .herobox {
             h1 {
                 font-size: 9.6rem;
@@ -78,7 +78,7 @@
 <script>
     import { gsap } from "gsap";
 
-    const bgAnimation = gsap.timeline({ repeat: -1, yoyo: true, defaults: { duration: 2 } })
+    const bgAnimation = gsap.timeline({ repeat: -1, yoyo: true, defaults: { duration: 2, ease:"none" } })
 
 
     bgAnimation.to(".box1", { height: "10vh" }, 0)
@@ -127,31 +127,32 @@
 
     bgAnimation.to(".hero-bg", { gap: "0vh" }, 12)
 
-    bgAnimation.to(".box1", { x: "180px" }, 14)
-    bgAnimation.to(".box1", { x: "360px" }, 16)
-    bgAnimation.to(".box1", { x: "540px" }, 18)
+    // bgAnimation.to(".box1", { x: "180px" }, 14)
+    // bgAnimation.to(".box1", { x: "360px" }, 16)
+    bgAnimation.to(".box1", { x: "540px" }, 12)
 
-    bgAnimation.to(".box2", { x: "180px" }, 16)
-    bgAnimation.to(".box2", { x: "360px" }, 18)
+    // bgAnimation.to(".box2", { x: "180px" }, 16)
+    bgAnimation.to(".box2", { x: "360px" }, 12)
 
-    bgAnimation.to(".box3", { x: "180px" }, 18)
-    bgAnimation.to(".box5", { x: "-180px" }, 18)
+    bgAnimation.to(".box3", { x: "180px" }, 12)
 
-    bgAnimation.to(".box6", { x: "-180px" }, 16)
-    bgAnimation.to(".box6", { x: "-360px" }, 18)
+    bgAnimation.to(".box5", { x: "-180px" }, 12)
 
-    bgAnimation.to(".box7", { x: "-180px" }, 14)
-    bgAnimation.to(".box7", { x: "-360px" }, 16)
-    bgAnimation.to(".box7", { x: "-540px" }, 18)
+    // bgAnimation.to(".box6", { x: "-180px" }, 16)
+    bgAnimation.to(".box6", { x: "-360px" }, 12)
+
+    // bgAnimation.to(".box7", { x: "-180px" }, 14)
+    // bgAnimation.to(".box7", { x: "-360px" }, 16)
+    bgAnimation.to(".box7", { x: "-540px" }, 12)
 
 
-    bgAnimation.to(".box1", { display: "none" }, 18)
-    bgAnimation.to(".box2", { display: "none" }, 18)
-    bgAnimation.to(".box3", { display: "none" }, 18)
+    // bgAnimation.to(".box1", { display: "none" }, 18)
+    // bgAnimation.to(".box2", { display: "none" }, 18)
+    // bgAnimation.to(".box3", { display: "none" }, 18)
 
-    bgAnimation.to(".box5", { display: "none" }, 18)
-    bgAnimation.to(".box6", { display: "none" }, 18)
-    bgAnimation.to(".box7", { display: "none" }, 18)
+    // bgAnimation.to(".box5", { display: "none" }, 18)
+    // bgAnimation.to(".box6", { display: "none" }, 18)
+    // bgAnimation.to(".box7", { display: "none" }, 18)
 
     // bgAnimation.reverse(20)
 
@@ -166,5 +167,7 @@
     // bgAnimation.to(".box5", { y: "-60vh" }, 20)
     // bgAnimation.to(".box6", { y: "-60vh" }, 20)
     // bgAnimation.to(".box7", { y: "-60vh" }, 20)
+
+    console.log("hello")
 
 </script>
