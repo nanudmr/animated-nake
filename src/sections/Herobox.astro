@@ -1,12 +1,15 @@
 ---
+import { Image } from "astro:assets";
+import DoubleArrow from "../../public/icons/Double-arrow.svg"
 
 ---
 
 <style lang="scss">
     .herobox {
-        height: 100dvh;
+        height: 80dvh;
         width: 100%;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         position: relative;
@@ -15,12 +18,47 @@
         z-index: 1;
 
         h1 {
-            font-size: 4.8rem;
+            font-size: 4rem;
             text-align: center;
-            line-height: 6.4rem;
+            line-height: 4.8rem;
             position: relative;
-             z-index: 2;
+            z-index: 2;
+            font-weight: 300;
+            letter-spacing: -0.5px;
+            padding: 0 1.4rem;
         }
+
+        a.free-consulting{
+            background-color: #1B1B1B;
+            display: flex;
+            align-items: center;
+            margin-top: 6.4rem;
+            border-radius: 0.4rem;
+            z-index: 100;
+            p{
+                padding: 1.6rem;
+                color: #C6C6C6;
+                border-right: 1px solid #3A3A3A;
+                font-size: 1.2rem;
+                line-height: 2.2rem;
+            }
+
+            img{
+                margin: 1.6rem;
+                z-index: 100;
+            }
+
+
+        }
+
+        p.final-text{
+            text-align: center;
+            margin-top: 3.2rem;
+            font-size: 1.6rem;
+            font-weight: 300;
+        }
+
+
 
         .hero-bg {
             display: flex;
@@ -35,7 +73,7 @@
                 height: 110vh;
                 width: 180px;
                 // transform-origin: center;
-                outline: 1px black solid;
+                outline: 1px #D9D9D9 solid;
                 /* inner stroke */
                 outline-offset: -0.5px;
                 /* negative border width + outline width */
@@ -57,6 +95,13 @@
 
 <div class="herobox">
     <h1 class="heading">Improve the quality and performance of your digital presence.</h1>
+
+    <a href="/" class="free-consulting">
+        <p>FREE CONSULTING</p>
+        <Image src={DoubleArrow} alt="double arrow"></Image>
+    </a>
+
+    <p class="final-text">A dedicated team of developers are waiting to launch, accelerate and support your business</p>
 
     <div class="hero-bg">
         <div class="box1">&nbsp</div>
@@ -114,36 +159,36 @@
     bgAnimation.to(".box6", { height: "40vh" }, 6)
     bgAnimation.to(".box7", { height: "40vh" }, 6)
 
-    bgAnimation.to(".box1", { y: "-29vh" }, 8)
-    bgAnimation.to(".box2", { y: "-29vh" }, 8)
-    bgAnimation.to(".box3", { y: "-29vh" }, 8)
-    bgAnimation.to(".box4", { y: "-29vh" }, 8)
-    bgAnimation.to(".box5", { y: "-29vh" }, 8)
-    bgAnimation.to(".box6", { y: "-29vh" }, 8)
-    bgAnimation.to(".box7", { y: "-29vh" }, 8)
+    // bgAnimation.to(".box1", { y: "-29vh" }, 8)
+    // bgAnimation.to(".box2", { y: "-29vh" }, 8)
+    // bgAnimation.to(".box3", { y: "-29vh" }, 8)
+    // bgAnimation.to(".box4", { y: "-29vh" }, 8)
+    // bgAnimation.to(".box5", { y: "-29vh" }, 8)
+    // bgAnimation.to(".box6", { y: "-29vh" }, 8)
+    // bgAnimation.to(".box7", { y: "-29vh" }, 8)
 
-    bgAnimation.to(".hero-bg", { gap: "6vh" }, 10)
-    bgAnimation.to(".hero-bg > *", { borderRadius: "12px" }, 10)
+    // bgAnimation.to(".hero-bg", { gap: "6vh" }, 10)
+    // bgAnimation.to(".hero-bg > *", { borderRadius: "12px" }, 10)
 
-    bgAnimation.to(".hero-bg", { gap: "0vh" }, 12)
+    // bgAnimation.to(".hero-bg", { gap: "0vh" }, 12)
 
-    // bgAnimation.to(".box1", { x: "180px" }, 14)
-    // bgAnimation.to(".box1", { x: "360px" }, 16)
-    bgAnimation.to(".box1", { x: "540px" }, 12)
+    // // bgAnimation.to(".box1", { x: "180px" }, 14)
+    // // bgAnimation.to(".box1", { x: "360px" }, 16)
+    // bgAnimation.to(".box1", { x: "540px" }, 12)
 
-    // bgAnimation.to(".box2", { x: "180px" }, 16)
-    bgAnimation.to(".box2", { x: "360px" }, 12)
+    // // bgAnimation.to(".box2", { x: "180px" }, 16)
+    // bgAnimation.to(".box2", { x: "360px" }, 12)
 
-    bgAnimation.to(".box3", { x: "180px" }, 12)
+    // bgAnimation.to(".box3", { x: "180px" }, 12)
 
-    bgAnimation.to(".box5", { x: "-180px" }, 12)
+    // bgAnimation.to(".box5", { x: "-180px" }, 12)
 
-    // bgAnimation.to(".box6", { x: "-180px" }, 16)
-    bgAnimation.to(".box6", { x: "-360px" }, 12)
+    // // bgAnimation.to(".box6", { x: "-180px" }, 16)
+    // bgAnimation.to(".box6", { x: "-360px" }, 12)
 
-    // bgAnimation.to(".box7", { x: "-180px" }, 14)
-    // bgAnimation.to(".box7", { x: "-360px" }, 16)
-    bgAnimation.to(".box7", { x: "-540px" }, 12)
+    // // bgAnimation.to(".box7", { x: "-180px" }, 14)
+    // // bgAnimation.to(".box7", { x: "-360px" }, 16)
+    // bgAnimation.to(".box7", { x: "-540px" }, 12)
 
 
     // bgAnimation.to(".box1", { display: "none" }, 18)

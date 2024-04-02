@@ -2,22 +2,21 @@
 const navLinks = [
     {
         name: "SERVICES",
-        url: "#services"
+        url: "#services",
     },
     {
         name: "ABOUT",
-        url: "#about"
+        url: "#about",
     },
     {
         name: "PORTFOLIO",
-        url: "#portfolio"
+        url: "#portfolio",
     },
     {
         name: "CONTACT",
-        url: "#contact"
-    }
-]
-
+        url: "#contact",
+    },
+];
 ---
 
 <style lang="scss">
@@ -27,7 +26,6 @@ const navLinks = [
         z-index: 10;
 
         nav {
-
             .nav-content {
                 display: flex;
                 justify-content: space-between;
@@ -35,7 +33,19 @@ const navLinks = [
                 height: 6.4rem;
                 padding: 0 1.6rem;
 
-                .header-logo {}
+                .logo{
+                    display: flex;
+                    gap: 1.2rem;
+                    align-items: center;
+
+                    p{
+                        font-size: 2rem;
+                        font-weight: 500;
+                        letter-spacing: -0.5px;
+                        display: block;
+                        transform: translateY(2.5px);
+                    }
+                }
 
                 .hamburger {
                     display: flex;
@@ -49,14 +59,12 @@ const navLinks = [
                         display: block;
                     }
                 }
-
             }
 
             .nav-links {
                 overflow: hidden;
                 height: 0px;
             }
-
         }
     }
 
@@ -66,82 +74,72 @@ const navLinks = [
                 .nav-content {
                     padding: 0 4.6rem;
                 }
-
             }
         }
     }
 </style>
 
 <header>
-
     <nav>
-
         <div class="nav-content">
-
-            <img src="/animated-nake/nakecode-logo.svg" alt="">
+            <a href="/" class="logo">
+                <img src="/animated-nake/nakecode-logo.svg" alt="" />
+                <p>Nakecode</p>
+            </a>
 
             <div class="hamburger" id="hamburger">
                 <span class="line1"></span>
                 <span class="line2"></span>
                 <span class="line3"></span>
             </div>
-
         </div>
 
         <div class="nav-links">
             <ul class="menu-links" id="menuLinks" role="navigation">
-                {navLinks.map(link => (
-                <li class="link-container">
-                    <div class="link">
-                        <a href="${link.url}">{link.name}</a>
-                    </div>
-                </li>
-                ))}
+                {
+                    navLinks.map((link) => (
+                        <li class="link-container">
+                            <div class="link">
+                                <a href="${link.url}">{link.name}</a>
+                            </div>
+                        </li>
+                    ))
+                }
             </ul>
         </div>
-
-
-
     </nav>
-
-
 </header>
 
-
-
 <script>
-
     import { gsap } from "gsap";
 
-    gsap.to(".line1, .line3", { x: -8 })
+    gsap.to(".line1, .line3", { x: -8 });
 
-    let menuToggle = true
+    let menuToggle = true;
 
-    const menuOpener = gsap.timeline({ defaults: { duration: 0.15 } })
-    menuOpener.pause()
+    const menuOpener = gsap.timeline({ defaults: { duration: 0.15 } });
+    menuOpener.pause();
 
-    menuOpener.to(".line1", { x: 0, duration: 0.15 }, 0)
-    menuOpener.to(".line3", { x: 0, duration: 0.15 }, 0)
+    menuOpener.to(".line1", { x: 0, duration: 0.15 }, 0);
+    menuOpener.to(".line3", { x: 0, duration: 0.15 }, 0);
 
-    menuOpener.to(".line2", { width: 0, duration: 0.1 }, 0.4)
+    menuOpener.to(".line2", { width: 0, duration: 0.1 }, 0.4);
 
-    menuOpener.to(".line1", { y: 10 }, 0.3)
-    menuOpener.to(".line3", { y: -10 }, 0.3)
+    menuOpener.to(".line1", { y: 10 }, 0.3);
+    menuOpener.to(".line3", { y: -10 }, 0.3);
 
-    menuOpener.to(".line1", { rotation: -40 }, 0.6)
-    menuOpener.to(".line3", { rotation: 40 }, 0.6)
+    menuOpener.to(".line1", { rotation: -40 }, 0.6);
+    menuOpener.to(".line3", { rotation: 40 }, 0.6);
 
     document.querySelector(".hamburger").addEventListener("click", () => {
         if (menuToggle) {
-            menuOpener.play(0)
-            console.log("open")
-            menuToggle = false
+            menuOpener.play(0);
+            console.log("open");
+            menuToggle = false;
         } else {
-            menuOpener.reverse()
-            console.log("close")
-            menuToggle = true
+            menuOpener.reverse();
+            console.log("close");
+            menuToggle = true;
         }
-
-    })
-
+    });
 </script>

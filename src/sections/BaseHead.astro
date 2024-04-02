@@ -11,14 +11,19 @@ const { title = "TITLE MISSING" } = Astro.props;
         href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
         rel="stylesheet"
     />
-    <link
-    rel="icon"
-    type="image/svg+xml"
-    href="/animated-nake/favicon.ico"
-/>
+    <link rel="icon" type="image/svg+xml" href="/animated-nake/favicon.ico" />
     <!-- <link rel="stylesheet" href="./src/styles/base-style.css"> -->
 
     <style is:global>
+        @font-face {
+            font-family: "uncut-sans";
+            src: url("/public/fonts/Uncut-Sans-Variable.ttf") format("ttf");
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        
         html {
             font-size: 62.5%;
         }
@@ -31,7 +36,7 @@ const { title = "TITLE MISSING" } = Astro.props;
             vertical-align: baseline;
             box-sizing: border-box;
             color: black;
-            font-family: "Space Grotesk", sans-serif;
+            font-family: "uncut-sans", sans-serif;
             font-size: 1.8rem;
         }
 
