@@ -1,7 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import DoubleArrow from "../../public/icons/Double-arrow.svg"
-
+import DoubleArrow from "../../public/icons/Double-arrow.svg";
 ---
 
 <style lang="scss">
@@ -14,7 +13,7 @@ import DoubleArrow from "../../public/icons/Double-arrow.svg"
         align-items: center;
         position: relative;
         overflow: hidden;
-        background-color: #EFEFEF;
+        background-color: #efefef;
         z-index: 1;
 
         h1 {
@@ -28,37 +27,36 @@ import DoubleArrow from "../../public/icons/Double-arrow.svg"
             padding: 0 1.4rem;
         }
 
-        a.free-consulting{
-            background-color: #1B1B1B;
+        a.free-consulting {
+            background-color: #1b1b1b;
             display: flex;
             align-items: center;
             margin-top: 6.4rem;
             border-radius: 0.4rem;
             z-index: 100;
-            p{
-                padding: 1.6rem;
-                color: #C6C6C6;
-                border-right: 1px solid #3A3A3A;
-                font-size: 1.2rem;
-                line-height: 2.2rem;
+            .text {
+                border-right: 1px solid #3a3a3a;
+                p {
+                    padding: 1.6rem;
+                    color: #c6c6c6;
+                    font-size: 1.2rem;
+                    line-height: 2.2rem;
+                    transform: translateY(1.5px);
+                }
             }
 
-            img{
+            img {
                 margin: 1.6rem;
                 z-index: 100;
             }
-
-
         }
 
-        p.final-text{
+        p.final-text {
             text-align: center;
             margin-top: 3.2rem;
             font-size: 1.6rem;
             font-weight: 300;
         }
-
-
 
         .hero-bg {
             display: flex;
@@ -67,41 +65,58 @@ import DoubleArrow from "../../public/icons/Double-arrow.svg"
             align-items: end;
             z-index: -1;
 
-            >* {
+            > * {
                 // border: 1px solid #D0D0D0;
                 // border-bottom: 0px;
                 height: 110vh;
                 width: 180px;
                 // transform-origin: center;
-                outline: 1px #D9D9D9 solid;
+                outline: 1px #d9d9d9 solid;
                 /* inner stroke */
                 outline-offset: -0.5px;
                 /* negative border width + outline width */
-
             }
         }
+    }
 
+    @media screen and (min-width: 600px) {
+        .herobox {
+            h1 {
+                padding: 2.2rem;
+                font-size: 6rem;
+                line-height: 7.2rem;
+            }
+        }
     }
 
     @media screen and (min-width: 900px) {
         .herobox {
+            // height: 90dvh;
             h1 {
-                font-size: 9.6rem;
+                font-size: 7.2rem;
+                line-height: 8.4rem;
+                max-width: 92rem;
             }
         }
     }
 </style>
 
-
 <div class="herobox">
-    <h1 class="heading">Improve the quality and performance of your digital presence.</h1>
+    <h1 class="heading">
+        Improve the quality and performance of your digital presence.
+    </h1>
 
     <a href="/" class="free-consulting">
-        <p>FREE CONSULTING</p>
-        <Image src={DoubleArrow} alt="double arrow"></Image>
+        <div class="text">
+            <p>FREE CONSULTING</p>
+        </div>
+        <Image src={DoubleArrow} alt="double arrow" />
     </a>
 
-    <p class="final-text">A dedicated team of developers are waiting to launch, accelerate and support your business</p>
+    <p class="final-text">
+        A dedicated team of developers are waiting to launch, accelerate and
+        support your business
+    </p>
 
     <div class="hero-bg">
         <div class="box1">&nbsp</div>
@@ -123,41 +138,43 @@ import DoubleArrow from "../../public/icons/Double-arrow.svg"
 <script>
     import { gsap } from "gsap";
 
-    const bgAnimation = gsap.timeline({ repeat: -1, yoyo: true, defaults: { duration: 2, ease:"none" } })
+    const bgAnimation = gsap.timeline({
+        repeat: -1,
+        yoyo: true,
+        defaults: { duration: 2, ease: "none" },
+    });
 
+    bgAnimation.to(".box1", { height: "10vh" }, 0);
+    bgAnimation.to(".box2", { height: "80vh" }, 0);
+    bgAnimation.to(".box3", { height: "30vh" }, 0);
+    bgAnimation.to(".box4", { height: "50vh" }, 0);
+    bgAnimation.to(".box5", { height: "20vh" }, 0);
+    bgAnimation.to(".box6", { height: "30vh" }, 0);
+    bgAnimation.to(".box7", { height: "60vh" }, 0);
 
-    bgAnimation.to(".box1", { height: "10vh" }, 0)
-    bgAnimation.to(".box2", { height: "80vh" }, 0)
-    bgAnimation.to(".box3", { height: "30vh" }, 0)
-    bgAnimation.to(".box4", { height: "50vh" }, 0)
-    bgAnimation.to(".box5", { height: "20vh" }, 0)
-    bgAnimation.to(".box6", { height: "30vh" }, 0)
-    bgAnimation.to(".box7", { height: "60vh" }, 0)
+    bgAnimation.to(".box1", { height: "40vh" }, 2);
+    bgAnimation.to(".box2", { height: "20vh" }, 2);
+    bgAnimation.to(".box3", { height: "70vh" }, 2);
+    bgAnimation.to(".box4", { height: "20vh" }, 2);
+    bgAnimation.to(".box5", { height: "60vh" }, 2);
+    bgAnimation.to(".box6", { height: "70vh" }, 2);
+    bgAnimation.to(".box7", { height: "30vh" }, 2);
 
+    bgAnimation.to(".box1", { height: "50vh" }, 4);
+    bgAnimation.to(".box2", { height: "60vh" }, 4);
+    bgAnimation.to(".box3", { height: "20vh" }, 4);
+    bgAnimation.to(".box4", { height: "70vh" }, 4);
+    bgAnimation.to(".box5", { height: "30vh" }, 4);
+    bgAnimation.to(".box6", { height: "50vh" }, 4);
+    bgAnimation.to(".box7", { height: "90vh" }, 4);
 
-    bgAnimation.to(".box1", { height: "40vh" }, 2)
-    bgAnimation.to(".box2", { height: "20vh" }, 2)
-    bgAnimation.to(".box3", { height: "70vh" }, 2)
-    bgAnimation.to(".box4", { height: "20vh" }, 2)
-    bgAnimation.to(".box5", { height: "60vh" }, 2)
-    bgAnimation.to(".box6", { height: "70vh" }, 2)
-    bgAnimation.to(".box7", { height: "30vh" }, 2)
-
-    bgAnimation.to(".box1", { height: "50vh" }, 4)
-    bgAnimation.to(".box2", { height: "60vh" }, 4)
-    bgAnimation.to(".box3", { height: "20vh" }, 4)
-    bgAnimation.to(".box4", { height: "70vh" }, 4)
-    bgAnimation.to(".box5", { height: "30vh" }, 4)
-    bgAnimation.to(".box6", { height: "50vh" }, 4)
-    bgAnimation.to(".box7", { height: "90vh" }, 4)
-
-    bgAnimation.to(".box1", { height: "40vh" }, 6)
-    bgAnimation.to(".box2", { height: "40vh" }, 6)
-    bgAnimation.to(".box3", { height: "40vh" }, 6)
-    bgAnimation.to(".box4", { height: "40vh" }, 6)
-    bgAnimation.to(".box5", { height: "40vh" }, 6)
-    bgAnimation.to(".box6", { height: "40vh" }, 6)
-    bgAnimation.to(".box7", { height: "40vh" }, 6)
+    bgAnimation.to(".box1", { height: "40vh" }, 6);
+    bgAnimation.to(".box2", { height: "40vh" }, 6);
+    bgAnimation.to(".box3", { height: "40vh" }, 6);
+    bgAnimation.to(".box4", { height: "40vh" }, 6);
+    bgAnimation.to(".box5", { height: "40vh" }, 6);
+    bgAnimation.to(".box6", { height: "40vh" }, 6);
+    bgAnimation.to(".box7", { height: "40vh" }, 6);
 
     // bgAnimation.to(".box1", { y: "-29vh" }, 8)
     // bgAnimation.to(".box2", { y: "-29vh" }, 8)
@@ -190,7 +207,6 @@ import DoubleArrow from "../../public/icons/Double-arrow.svg"
     // // bgAnimation.to(".box7", { x: "-360px" }, 16)
     // bgAnimation.to(".box7", { x: "-540px" }, 12)
 
-
     // bgAnimation.to(".box1", { display: "none" }, 18)
     // bgAnimation.to(".box2", { display: "none" }, 18)
     // bgAnimation.to(".box3", { display: "none" }, 18)
@@ -204,7 +220,6 @@ import DoubleArrow from "../../public/icons/Double-arrow.svg"
     // bgAnimation.to(".box4", { outline:"none", border:"1px solid red" }, 18)
     // bgAnimation.to(".box4", { scaleX:8, scaleY:2 }, 20)
 
-
     // bgAnimation.to(".box1", { y: "-60vh" }, 20)
     // bgAnimation.to(".box2", { y: "-60vh" }, 20)
     // bgAnimation.to(".box3", { y: "-60vh" }, 20)
@@ -213,6 +228,5 @@ import DoubleArrow from "../../public/icons/Double-arrow.svg"
     // bgAnimation.to(".box6", { y: "-60vh" }, 20)
     // bgAnimation.to(".box7", { y: "-60vh" }, 20)
 
-    console.log("hello")
-
+    console.log("hello");
 </script>
