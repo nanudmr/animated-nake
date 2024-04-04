@@ -17,13 +17,24 @@ const { title = "TITLE MISSING" } = Astro.props;
     <style is:global>
         @font-face {
             font-family: "uncut-sans";
-            src: url("/public/fonts/Uncut-Sans-Variable.ttf") format("ttf");
-            font-weight: 700;
+            src: url("/fonts/Uncut-Sans-Variable.woff") format("woff");
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: "uncut-sans";
+            src: url("/fonts/UncutSans-Book.woff") format("woff");
+            font-weight: 350;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: "spline-sans-mono";
+            src: url("/fonts/SplineSansMono-Regular.woff") format("woff");
             font-style: normal;
             font-display: swap;
         }
 
-        
         html {
             font-size: 62.5%;
         }
@@ -37,7 +48,11 @@ const { title = "TITLE MISSING" } = Astro.props;
             box-sizing: border-box;
             color: black;
             font-family: "uncut-sans", sans-serif;
+            font-weight: 350;
             font-size: 1.8rem;
+            -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+            -moz-box-sizing: border-box; /* Firefox, other Gecko */
+            box-sizing: border-box; /* Opera/IE 8+ */
         }
 
         body {

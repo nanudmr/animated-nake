@@ -1,16 +1,19 @@
 ---
-
+import { Image } from "astro:assets";
+import browser from "../../public/images/browser.svg";
+import server from "../../public/images/server.svg";
+import database from "../../public/images/database.svg";
 ---
 
 <style lang="scss">
     .container {
-        background-color: #EFEFEF;
+        background-color: #efefef;
         margin: 0px 0.8rem;
 
         border-radius: 0.8rem;
 
         hr {
-            border: 1px solid #D9D9D9;
+            border: 1px solid #d9d9d9;
         }
 
         .container-head {
@@ -19,72 +22,97 @@
             justify-content: space-between;
 
             h2 {
-                font-size: 3.2rem;
-            }
-
-            button {
-                background-color: #EFEFEF;
+                font-size: 2.4rem;
+                line-height: 3.2rem;
                 display: flex;
-                align-items: center;
-                border: 1px solid #D0D0D0;
-                border-radius: 8px;
+                gap: 0.8rem;
+                letter-spacing: -0.5px;
 
-                hr {
-                    border: 0.5px solid #D0D0D0;
-                    height: 100%;
+                span {
+                    font-family: "spline-sans-mono";
+                    color: #eb443a;
+                    font-size: 2.4rem;
+                    line-height: 3.2rem;
                 }
-
-                p {
-                    padding: 8px 12px;
-                }
-
-                img {
-                    padding: 8px 12px;
-                }
-
-            }
-        }
-
-        .container-intro {
-            margin: 0 0.8rem;
-            margin-top: 4.8rem;
-
-            h2 {
-                font-size: 4rem;
-            }
-
-            p {
-                margin-top: 2.4rem;
-                max-width: 9.6rem;
-                font-family: 'Space Mono', monospace;
-                color: #929292;
-                font-size: 1.2rem;
             }
         }
 
         .container-content {
             margin: 0 0.8rem;
-            margin-top: 9.6rem;
+            padding: 3.2rem 0 6.4rem 0;
 
-            img {
-                width: 100%;
+            .container-intro {
+                margin: 0 1.6rem;
+
+                h2 {
+                    font-size: 4rem;
+                    line-height: 4.8rem;
+                    letter-spacing: -1px;
+                    color: #151515;
+                }
+            }
+
+            .info {
+                background-color: #eaeaea;
+                padding: 1.6rem 0.8rem;
+                border-radius: 0.8rem;
+                margin: 3.2rem 0;
+                p {
+                    font-size: 1rem;
+                    color: #6b6b6b;
+                    margin-bottom: 3.2rem;
+                }
+
+                .elements {
+                    border: 1px dashed #c6c6c6;
+                    border-radius: 0.8rem;
+                    padding: 3.2rem 0;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 3.2rem;
+
+                    .card {
+                        text-align: center;
+                        p {
+                            margin-bottom: 0px;
+                        }
+                    }
+                }
             }
 
             .text {
-                display: grid;
-                grid-template-columns: 1fr;
-                gap: 1.6rem;
-                padding-bottom: 12.8rem;
+                display: flex;
+                flex-direction: column;
+                gap: 3.2rem;
+                p {
+                    font-size: 1.6rem;
+                    line-height: 2.4rem;
+                    color: #6b6b6b;
+                }
+            }
+        }
+    }
 
-                h4 {
-                    margin-top: 9.6rem;
-                    font-size: 2.4rem;
+    @media screen and (min-width: 600px) {
+        .container {
+            margin: 0 1rem;
+            .container-content {
+                .container-intro {
+                    h2 {
+                        font-size: 6rem;
+                        line-height: 7.2rem;
+                    }
+                }
+                .info {
+                    .elements {
+                        flex-direction: row;
+                        justify-content: space-between;
+                        padding: 3.2rem;
+                    }
                 }
 
-                p {
-                    font-family: 'Space Mono', monospace;
-                    font-size: 1.6rem;
-                    color: #929292;
+                .text {
+                    flex-direction: row;
                 }
             }
         }
@@ -92,6 +120,7 @@
 
     @media screen and (min-width: 900px) {
         .container {
+            margin: 0 2.4rem;
             .container-intro {
                 position: relative;
                 margin: 9.6rem 4.6rem;
@@ -113,15 +142,22 @@
             }
 
             .container-content {
-                img {
-                    max-height: 38.4rem;
+                .info {
+                    .elements {
+                        .card {
+                            img {
+                                width: 192px;
+                                height: auto;
+                            }
+                        }
+                    }
                 }
 
                 .text {
                     grid-template-columns: 1fr 1fr;
                     max-width: 880px;
                     margin: 0 auto;
-                    h4{
+                    h4 {
                         grid-column: span 2;
                     }
                 }
@@ -130,46 +166,54 @@
     }
 </style>
 
-
 <div class="container">
-
     <div class="container-head">
-        <h2>Artwork</h2>
-        <button>
-            <p>VIEW ALL</p>
-            <hr>
-            <img src="/animated-nake/Arrow.svg" alt="">
-        </button>
+        <h2><span>01</span>Web/App Development</h2>
     </div>
-    <hr>
-
-    <div class="container-intro">
-        <h2>Animations, Graphics, <br> Frontend Design.</h2>
-        <p>lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </div>
+    <hr />
 
     <div class="container-content">
-        <img src="/animated-nake/placeholder2.png" alt="">
+        <div class="container-intro">
+            <h2>Improve the quality and performance</h2>
+        </div>
+
+        <div class="info">
+            <p>FULL-STACK <br /> WEB/APP DEV</p>
+
+            <div class="elements">
+                <div class="card">
+                    <Image src={browser} alt="browser" />
+                    <p>BROWSER</p>
+                </div>
+                <div class="card">
+                    <Image src={server} alt="server" />
+                    <p>SERVER</p>
+                </div>
+                <div class="card">
+                    <Image src={database} alt="database" />
+                    <p>DATABASE</p>
+                </div>
+            </div>
+        </div>
 
         <div class="text">
+            <p class="final-text">
+                At Nakecode we take care of establishing the three fundamental
+                pillars that your website needs. From custom frameworks
+                optimized for your project objectives to a simpler solutions
+                like all-in-one platforms.
+            </p>
 
-            <h4 class="a">Executive team</h4>
-
-            <p class="b">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sapien nisl, posuere non vulputate
-                sed, ultrices id urna. Suspendisse rutrum quis nisi vestibulum volutpat. Mauris consequat nec orci et
-                vulputate. elementum. </p>
-
-            <p class="b">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sapien nisl, posuere non vulputate
-                sed, ultrices id urna. Suspendisse rutrum quis nisi vestibulum volutpat. Mauris consequat nec orci et
-                vulputate. elementum. </p>
-
+            <p class="final-text">
+                Our development services aren't limited to just creating and
+                launching your website. As a small and dedicated team, we also
+                supply you with the highest level of customer service for any
+                future support and enhancements.
+            </p>
         </div>
     </div>
-
 </div>
 
 <script>
     import { gsap } from "gsap";
-
-
 </script>

@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import DoubleArrow from "../../public/icons/Double-arrow.svg";
+import DoubleArrow from "./../../public/icons/DoubleArrow.svg"
 ---
 
 <style lang="scss">
@@ -22,7 +22,6 @@ import DoubleArrow from "../../public/icons/Double-arrow.svg";
             line-height: 4.8rem;
             position: relative;
             z-index: 2;
-            font-weight: 300;
             letter-spacing: -0.5px;
             padding: 0 1.4rem;
         }
@@ -34,15 +33,13 @@ import DoubleArrow from "../../public/icons/Double-arrow.svg";
             margin-top: 6.4rem;
             border-radius: 0.4rem;
             z-index: 100;
-            .text {
+
+            p {
+                padding: 1.6rem;
+                color: #c6c6c6;
+                font-size: 1.2rem;
+                line-height: 2.2rem;
                 border-right: 1px solid #3a3a3a;
-                p {
-                    padding: 1.6rem;
-                    color: #c6c6c6;
-                    font-size: 1.2rem;
-                    line-height: 2.2rem;
-                    transform: translateY(1.5px);
-                }
             }
 
             img {
@@ -55,7 +52,6 @@ import DoubleArrow from "../../public/icons/Double-arrow.svg";
             text-align: center;
             margin-top: 3.2rem;
             font-size: 1.6rem;
-            font-weight: 300;
         }
 
         .hero-bg {
@@ -91,7 +87,7 @@ import DoubleArrow from "../../public/icons/Double-arrow.svg";
 
     @media screen and (min-width: 900px) {
         .herobox {
-            // height: 90dvh;
+            height: 90vh;
             h1 {
                 font-size: 7.2rem;
                 line-height: 8.4rem;
@@ -107,9 +103,7 @@ import DoubleArrow from "../../public/icons/Double-arrow.svg";
     </h1>
 
     <a href="/" class="free-consulting">
-        <div class="text">
-            <p>FREE CONSULTING</p>
-        </div>
+        <p>FREE CONSULTING</p>
         <Image src={DoubleArrow} alt="double arrow" />
     </a>
 
