@@ -2,6 +2,11 @@
 import { Image } from "astro:assets";
 import DoubleArrow from "./../../public/icons/DoubleArrow.svg"
 import Placeholder from "./../../public/images/placeholder.jpg"
+import Development from "./../../public/images/development.svg"
+import DigitalDesign from "./../../public/images/digital-design.svg"
+import LeadGeneration from "./../../public/images/digital-design.svg"
+
+
 ---
 
 <style lang="scss">
@@ -33,6 +38,10 @@ import Placeholder from "./../../public/images/placeholder.jpg"
                 color: #909090;
                 font-weight: 300;
             }
+        }
+
+        .container-content{
+            display: none;
         }
     }
 
@@ -78,8 +87,7 @@ import Placeholder from "./../../public/images/placeholder.jpg"
                         color: #F3F3F3;
                     }
 
-                    img.card-image{
-                        border: 1px solid white;
+                    img{
                         margin-bottom: 6.4rem;
                         width: 100%;
                     }
@@ -100,6 +108,7 @@ import Placeholder from "./../../public/images/placeholder.jpg"
 
                     .card-footer{
                         display: flex;
+                        align-items: center;
                         justify-content: space-between;
                         .card-footer-text{
                             color: #6B6B6B;
@@ -111,10 +120,17 @@ import Placeholder from "./../../public/images/placeholder.jpg"
                             align-items: center;
                             border: 1px solid #3A3A3A;
                             justify-content: space-around;
+                            border-radius: 4px;
+      
 
                             p.number{
                                 border-right: 1px solid #3A3A3A;
-
+                                padding: 0.3rem;
+                                color: #6B6B6B;
+                                font-size: 1.4rem;
+                            }
+                            img{
+                                margin: 0.3rem;
                             }
                         }
                     }
@@ -136,7 +152,7 @@ import Placeholder from "./../../public/images/placeholder.jpg"
 
     <div class="container-content">
         <div class="card">
-            <Image class="card-image" src={Placeholder} alt="placeholder"></Image>
+            <Image class="card-image" src={Development} alt="placeholder"></Image>
             <p class="title">Development</p>
             <p class="description">Build with the technology that best suits your project to achieve your goals within your budget</p>
             <div class="card-footer">
@@ -148,25 +164,25 @@ import Placeholder from "./../../public/images/placeholder.jpg"
             </div>
         </div>
         <div class="card">
-            <Image class="card-image" src={Placeholder} alt="placeholder"></Image>
+            <Image class="card-image" src={DigitalDesign} alt="placeholder"></Image>
             <p class="title">Digital Design</p>
             <p class="description">Get visually appealing designs and animations to ensure the highest conversion rate for your business</p>
             <div class="card-footer">
                 <p class="card-footer-text">UI/UX & ASSETS</p>
                 <div class="card-footer-button">
-                    <p class="number">01</p>
+                    <p class="number">02</p>
                     <Image src={DoubleArrow} alt="Double Arrow Icon"></Image>
                 </div>
             </div>
         </div>
         <div class="card">
-            <Image class="card-image" src={Placeholder} alt="placeholder"></Image>
+            <Image class="card-image" src={LeadGeneration} alt="placeholder"></Image>
             <p class="title">Lead Generation</p>
             <p class="description">Increase your digital exposure and raise your positioning through ads campaigns and content creation</p>
             <div class="card-footer">
                 <p class="card-footer-text">ADS & SEO</p>
                 <div class="card-footer-button">
-                    <p class="number">01</p>
+                    <p class="number">03</p>
                     <Image src={DoubleArrow} alt="Double Arrow Icon"></Image>
                 </div>
             </div>
