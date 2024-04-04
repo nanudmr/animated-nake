@@ -1,12 +1,11 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Navbar from "../sections/Navbar.astro";
 import Herobox from "../sections/Herobox.astro";
-import Artwork from "../sections/Artwork.astro";
-import Coding from "../sections/Coding.astro";
 import Marketing from "../sections/Marketing.astro";
 import About from "../sections/About.astro";
 import Services from "../sections/Services.astro";
+import WebApp from "../sections/WebApp.astro";
+import Assets from "../sections/Assets.astro"
 
 const title = "Animated Asstro"
 
@@ -20,8 +19,8 @@ const title = "Animated Asstro"
 <BaseLayout title={title}>
 	<Herobox />
 	<Services />
-	<Artwork/>
-	<Coding/>
+	<WebApp/>
+	<Assets/>
 	<Marketing/>
 	<About/>
 </BaseLayout>

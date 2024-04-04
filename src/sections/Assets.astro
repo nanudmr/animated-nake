@@ -1,0 +1,148 @@
+---
+
+---
+
+<style lang="scss">
+    .assets {
+        background-color: #1b1b1d;
+        margin: 0px 0.8rem;
+        border: 1px solid #3a3a3a;
+        margin-top: 6.4rem;
+
+        border-radius: 0.8rem;
+
+        hr {
+            border: 0.5px solid #3a3a3a;
+        }
+
+        .assets-head {
+            padding: 1.6rem 1.6rem;
+            display: flex;
+            justify-content: space-between;
+
+            h2 {
+                font-size: 2.4rem;
+                line-height: 3.2rem;
+                display: flex;
+                gap: 0.8rem;
+                letter-spacing: -0.5px;
+                color: #c6c6c6;
+
+                span {
+                    font-family: "spline-sans-mono";
+                    color: #eb443a;
+                    font-size: 2.4rem;
+                    line-height: 3.2rem;
+                }
+            }
+        }
+
+        .assets-intro {
+            margin: 0 0.8rem;
+            margin: 3.2rem 1.6rem;
+
+            h2 {
+                font-size: 4rem;
+                color: #efefef;
+            }
+        }
+
+        .assets-content {
+            margin: 0 0.8rem;
+
+            .slider {
+                margin-bottom: 3.2rem;
+                img {
+                    width: 100%;
+                }
+            }
+
+            .text {
+                display: flex;
+                flex-direction: column;
+                gap: 3.2rem;
+                padding-bottom: 6.4rem;
+
+                p {
+                    color: #929292;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 900px) {
+        .assets {
+            .assets-intro {
+                position: relative;
+                margin: 9.6rem 4.6rem;
+
+                h2 {
+                    margin-top: 9.6rem;
+                    font-size: 6.4rem;
+                    width: max-content;
+                    margin-left: auto;
+                    margin-right: auto;
+                    width: 880px;
+                }
+
+                p {
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                }
+            }
+
+            .assets-content {
+                img {
+                    max-height: 38.4rem;
+                }
+
+                .text {
+                    grid-template-columns: 1fr 1fr;
+                    max-width: 880px;
+                    margin: 0 auto;
+                    h4 {
+                        grid-column: span 2;
+                    }
+                }
+            }
+        }
+    }
+</style>
+
+<div class="assets">
+    <div class="assets-head">
+        <h2><span>02</span>UI/UX & Assets</h2>
+    </div>
+    <hr />
+
+    <div class="assets-intro">
+        <h2>We craft unique & recognizable projects, beauty attracts people</h2>
+    </div>
+
+    <div class="assets-content">
+        <div class="slider">
+            <img src="/animated-nake/images/placeholder2.png" alt="" />
+        </div>
+
+        <div class="text">
+            <p>
+                Stand out in the digital sphere with our digital design
+                services. We work with the latest technologies to cover you from
+                2D and 3D animated assets to visually appealing and user
+                friendly designs.
+            </p>
+
+            <p>
+                Whether you're looking for a UI/UX design for your website, a
+                graphic design for your logo, or a digital design for your
+                business branding you can count on us. We have the experience
+                and expertise to turn your ideas into a reality.
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+    import { gsap } from "gsap";
+</script>
