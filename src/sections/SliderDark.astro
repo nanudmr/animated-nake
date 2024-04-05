@@ -1,0 +1,223 @@
+---
+
+---
+
+<style lang="scss">
+    .slider-dark {
+        background-color: #1b1b1d;
+        margin: 0px 0.8rem;
+        border: 1px solid #3a3a3a;
+        margin-top: 6.4rem;
+
+        border-radius: 0.8rem;
+
+        hr {
+            border: 0.5px solid #3a3a3a;
+        }
+
+        .slider-dark-head {
+            padding: 1.6rem 1.6rem;
+            display: flex;
+            justify-content: space-between;
+
+            h2 {
+                font-size: 2.4rem;
+                line-height: 3.2rem;
+                display: flex;
+                gap: 0.8rem;
+                letter-spacing: -0.5px;
+                color: #c6c6c6;
+
+                span {
+                    font-family: "spline-sans-mono";
+                    color: #eb443a;
+                    font-size: 2.4rem;
+                    line-height: 3.2rem;
+                }
+            }
+        }
+
+        .slider-dark-intro {
+            margin: 0 0.8rem;
+            margin: 3.2rem 1.6rem;
+
+            h2 {
+                font-size: 4rem;
+                color: #efefef;
+            }
+        }
+
+        .slider-dark-content {
+            margin: 0 0.8rem;
+
+            .slider {
+                max-width: 144rem;
+                margin: 0 auto;
+                margin-bottom: 3.2rem;
+
+                .my-slider-progress {
+                    background: #ccc;
+                    margin: 0 auto;
+                    margin-top: 2.4rem;
+                    width: 90%;
+                }
+
+                .my-slider-progress-bar {
+                    background: #eb443a;
+                    height: 2px;
+                    transition: width 400ms ease;
+                    width: 0;
+                }
+
+                li.splide__slide {
+                    aspect-ratio: 8/5;
+                }
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .text {
+                display: flex;
+                flex-direction: column;
+                gap: 3.2rem;
+                padding-bottom: 6.4rem;
+
+                p {
+                    color: #929292;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 600px) {
+        .slider-dark {
+            margin: 0 1rem;
+            margin-top: 6.4rem;
+            .slider-dark-content {
+                .text {
+                    flex-direction: row;
+                    max-width: 880px;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 900px) {
+        .slider-dark {
+            margin: 0 2.4rem;
+            margin-top: 6.4rem;
+            .slider-dark-intro {
+                position: relative;
+                margin: 9.6rem 4.6rem;
+
+                h2 {
+                    margin-top: 9.6rem;
+                    font-size: 6.4rem;
+                    width: max-content;
+                    margin-left: auto;
+                    margin-right: auto;
+                    width: 880px;
+                }
+            }
+
+            .slider-dark-content {
+                .slider {
+                    width: 75vw;
+                    max-width: 128rem;
+
+                    li.splide__slide {
+                        // padding: 6.4rem;
+                    }
+                }
+            }
+        }
+    }
+</style>
+
+<div class="slider-dark">
+    <div class="slider-dark-head">
+        <h2><span>02</span>UI/UX & Assets</h2>
+    </div>
+    <hr />
+
+    <div class="slider-dark-intro">
+        <h2>We craft unique & recognizable projects, beauty attracts people</h2>
+    </div>
+
+    <div class="slider-dark-content">
+        <div class="slider">
+            <div class="splide">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <img
+                                src="/animated-nake/images/placeholder2.png"
+                                alt=""
+                            />
+                        </li>
+                        <li class="splide__slide">
+                            <img
+                                src="/animated-nake/images/placeholder2.png"
+                                alt=""
+                            />
+                        </li>
+                        <li class="splide__slide">
+                            <img
+                                src="/animated-nake/images/placeholder2.png"
+                                alt=""
+                            />
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Add the progress bar element -->
+                <div class="my-slider-progress">
+                    <div class="my-slider-progress-bar"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text">
+            <p>
+                Stand out in the digital sphere with our digital design
+                services. We work with the latest technologies to cover you from
+                2D and 3D animated assets to visually appealing and user
+                friendly designs.
+            </p>
+
+            <p>
+                Whether you're looking for a UI/UX design for your website, a
+                graphic design for your logo, or a digital design for your
+                business branding you can count on us. We have the experience
+                and expertise to turn your ideas into a reality.
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+    import { Splide } from "./../../public/splide-4.1.3";
+
+    var splide = new Splide(".splide", {
+        arrows: false,
+        pagination: false,
+        autoplay: false,
+        lazyload: true,
+        rewind: true,
+    });
+    const bar = splide.root.querySelector(
+        ".my-slider-progress-bar",
+    ) as HTMLElement;
+
+    // Updates the bar width whenever the carousel moves:
+    splide.on("mounted move", function () {
+        var end = splide.Components.Controller.getEnd() + 1;
+        var rate = Math.min((splide.index + 1) / end, 1);
+        bar.style.width = String(100 * rate) + "%";
+    });
+
+    splide.mount();
+</script>
