@@ -1,0 +1,177 @@
+---
+import { Image } from "astro:assets";
+import LongArrowRed from "./../../public/icons/long-arrow-red.svg";
+---
+
+<style lang="scss">
+    .portfolio {
+        margin-top: 8rem;
+    }
+
+    h2 {
+        padding: 0 1.2rem;
+        font-size: 2.4rem;
+        line-height: 3.2rem;
+        color: #c6c6c6;
+        margin-bottom: 1.6rem;
+    }
+
+    hr {
+        background-color: #3a3a3a;
+        height: 1px;
+    }
+
+    .portfolio-content {
+        padding: 0 1.2rem;
+        h2 {
+            margin: 3.2rem 0;
+            font-size: 4rem;
+            line-height: 4.8rem;
+            color: #f3f3f3;
+            padding: 0;
+        }
+
+        a {
+            font-size: 1rem;
+            line-height: 1.6rem;
+            color: #6b6b6b;
+
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+
+            // margin-bottom: 3.2rem;
+        }
+    }
+
+    .slider {
+        max-width: 144rem;
+        margin: 0 auto;
+        margin-bottom: 3.2rem;
+
+        .my-slider-progress {
+            background: #ccc;
+            margin: 0 auto;
+            margin-top: 2.4rem;
+            width: 90%;
+        }
+
+        .my-slider-progress-bar {
+            background: #eb443a;
+            height: 2px;
+            transition: width 400ms ease;
+            width: 0;
+        }
+
+        li.splide__slide {
+            aspect-ratio: 8/5;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    @media screen and (min-width: 600px) {
+        .slider-light {
+            margin: 0 1rem;
+            margin-top: 6.4rem;
+        }
+    }
+
+    @media screen and (min-width: 900px) {
+        .portfolio-content {
+            .portfolio-intro {
+                max-width: 880px;
+                margin: 0 auto;
+                margin-bottom: 6.4rem;
+                h2 {
+                    margin-top: 9.6rem;
+                    font-size: 6rem;
+                    line-height: 7.2rem;
+                    width: max-content;
+                    margin-left: auto;
+                    margin-right: auto;
+                    max-width: 880px;
+                }
+            }
+
+            .slider {
+                width: 75vw;
+                max-width: 128rem;
+            }
+        }
+    }
+</style>
+
+<div class="portfolio">
+    <h2>Portfolio</h2>
+    <hr />
+
+    <div class="portfolio-content">
+        <div class="portfolio-intro">
+            <h2>Developing digital experiences across all industries</h2>
+            <a href="#"
+                >SEE ALL PROJECTS <Image
+                    src={LongArrowRed}
+                    alt="Long red arrow"
+                /></a
+            >
+        </div>
+
+        <div class="slider">
+            <div class="splide portfolio-slider">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <img
+                                src="/animated-nake/images/placeholder2.png"
+                                alt=""
+                            />
+                        </li>
+                        <li class="splide__slide">
+                            <img
+                                src="/animated-nake/images/placeholder2.png"
+                                alt=""
+                            />
+                        </li>
+                        <li class="splide__slide">
+                            <img
+                                src="/animated-nake/images/placeholder2.png"
+                                alt=""
+                            />
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Add the progress bar element -->
+                <div class="my-slider-progress">
+                    <div class="my-slider-progress-bar portfolio-progress-bar">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            var splide1 = new Splide(".splide.portfolio-slider", {
+                arrows: false,
+                pagination: false,
+                autoplay: false,
+                lazyload: true,
+                rewind: true,
+            });
+            const bar = splide1.root.querySelector(
+                ".my-slider-progress-bar.portfolio-progress-bar",
+            ) as HTMLElement;
+
+            // Updates the bar width whenever the carousel moves:
+            splide1.on("mounted move", function () {
+                var end = splide1.Components.Controller.getEnd() + 1;
+                var rate = Math.min((splide1.index + 1) / end, 1);
+                bar.style.width = String(100 * rate) + "%";
+            });
+
+            splide1.mount();
+        </script>
+    </div>
+</div>
