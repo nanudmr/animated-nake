@@ -1,4 +1,7 @@
 ---
+import Image from "astro/components/Image.astro";
+import Logo from "./../../public/nakecode-logo.svg"
+
 const navLinks = [
     {
         name: "SERVICES",
@@ -86,7 +89,7 @@ const navLinks = [
     <nav>
         <div class="nav-content">
             <a href="/" class="logo">
-                <img src="/animated-nake/nakecode-logo.svg" alt="" />
+                <Image src={Logo} alt="nakecode logo"/>
                 <p>Nakecode</p>
             </a>
 

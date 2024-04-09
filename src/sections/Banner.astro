@@ -1,0 +1,169 @@
+---
+import { Image } from "astro:assets";
+import DoubleArrow from "./../../public/icons/DoubleArrow.svg";
+import DecorationCirlce from "./../../public/images/decoration-circle.svg";
+---
+
+<style lang="scss">
+    .banner {
+        background-color: #f3f3f3;
+
+        margin: 0 0.6rem;
+        margin-bottom: 6.4rem;
+
+        padding: 1.6rem;
+
+        display: flex;
+        flex-direction: column;
+
+        border-radius: 0.8rem;
+
+        position: relative;
+
+        overflow: hidden;
+    }
+
+    .top-circle {
+        position: absolute;
+        top: -219px;
+        right: -219px;
+
+        -webkit-animation: spin 120s linear infinite;
+        -moz-animation: spin 120s linear infinite;
+        animation: spin 120s linear infinite;
+    }
+
+    .bottom-circle {
+        position: absolute;
+        bottom: -219px;
+        left: -219px;
+
+        display: none;
+
+        -webkit-animation: spin 120s linear infinite;
+        -moz-animation: spin 120s linear infinite;
+        animation: spin 120s linear infinite;
+    }
+
+    @-moz-keyframes spin {
+        100% {
+            -moz-transform: rotate(360deg);
+        }
+    }
+    @-webkit-keyframes spin {
+        100% {
+            -webkit-transform: rotate(360deg);
+        }
+    }
+    @keyframes spin {
+        100% {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+    }
+
+    h2 {
+        font-size: 4rem;
+        line-height: 4.8rem;
+        letter-spacing: -2px;
+        margin-top: 12.8rem;
+        z-index: 10;
+    }
+
+    a.free-consulting {
+        background-color: #1b1b1b;
+        display: flex;
+        align-items: center;
+        margin-top: 8rem;
+        border-radius: 0.4rem;
+        z-index: 100;
+        align-self: flex-start;
+
+        p {
+            padding: 1.6rem;
+            color: #c6c6c6;
+            font-size: 1.2rem;
+            line-height: 2.2rem;
+            border-right: 1px solid #3a3a3a;
+        }
+
+        img {
+            margin: 1.6rem;
+            z-index: 100;
+        }
+    }
+
+    @media screen and (min-width: 600px) {
+        .banner {
+            margin: 0 1rem;
+            margin-bottom: 6.4rem;
+        }
+
+        .top-circle, {
+            height: 576px;
+            width: 576px;
+            top: calc(-576px/2);
+            right: calc(-576px/2);
+        }
+
+        .bottom-circle, {
+            height: 576px;
+            width: 576px;
+            bottom: calc(-576px/2);
+            left: calc(-576px/2);
+        }
+
+        h2 {
+            font-size: 6rem;
+            line-height: 7.2rem;
+            letter-spacing: -3px;
+        }
+    }
+
+    @media screen and (min-width: 900px) {
+        .banner {
+            // margin: 0 7.6rem;
+            margin-bottom: 6.4rem;
+            align-items: center;
+
+            padding: 10.4rem 0;
+        }
+
+        .bottom-circle{
+            display: block;
+        }
+
+        h2 {
+            max-width: 53rem;
+            text-align: center;
+            font-size: 6.4rem;
+            line-height: 7.2rem;
+
+            margin-top: 0;
+        }
+
+        a.free-consulting {
+            align-self: center;
+            margin-top: 3.2rem;
+        }
+    }
+</style>
+
+<div class="banner">
+    <Image class="top-circle" src={DecorationCirlce} alt="decoration circle" />
+
+    <h2>Elevate Your Digital Presence Today</h2>
+
+    <a href="/" class="free-consulting">
+        <p>FREE CONSULTING</p>
+        <Image src={DoubleArrow} alt="double arrow" />
+    </a>
+
+    <Image
+        class="bottom-circle"
+        src={DecorationCirlce}
+        alt="decoration circle"
+    />
+</div>
+
+<script></script>

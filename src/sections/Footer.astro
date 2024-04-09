@@ -1,5 +1,8 @@
 ---
 
+import Image from "astro/components/Image.astro"
+import LightLogo from "./../../public/light-nakecode-logo.svg"
+
 const footLinks = [
     {
         name: "SERVICES",
@@ -23,10 +26,38 @@ const footLinks = [
 
 <style lang="scss">
     footer{
-        background-color: white;
-        min-height: 600px;
+        background-color: #1B1B1B;
+        border-top: 1px solid #3A3A3A;
+        padding: 1.4rem 1.2rem 1.4rem 1.4rem;
+
+        border-bottom: 4px solid #EB443A;
     }
 
+    .foot-links{
+        display: none;
+    }
+
+    .footer-logo{
+        margin-bottom: 3.2rem;
+
+    }
+
+    h2{
+        font-size: 4.2rem;
+        line-height: 4.2rem;
+        letter-spacing: -2.1px;
+        margin-bottom: 6.4rem;
+
+        font-weight: 500;
+
+        color: #C6C6C6;
+    }
+
+    p{
+        color: #6B6B6B;
+        font-size: 1.4rem;
+        line-height: 2.2rem;
+    }
 
 </style>
 
@@ -41,6 +72,14 @@ const footLinks = [
             ))}
 
         </ul>
+    </div>
+
+    <div class="footer-content">
+        <Image class="footer-logo" src={LightLogo} alt="nakecode logo" />
+
+        <h2>Nakecode</h2>
+
+        <p>A dedicated team of developers are waiting to launch, accelerate and support your business</p>
     </div>
         
 </footer>
