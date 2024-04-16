@@ -1,4 +1,9 @@
 ---
+import { Image } from "astro:assets";
+import Mobiletread from "./../../public/images/mobile-tread-design.jpg"
+import Kings from "./../../public/images/kings-designs.jpg"
+import VeiCenter from "./../../public/images/vei-center-design.jpg"
+
 
 ---
 
@@ -71,10 +76,12 @@
 
                 li.splide__slide {
                     aspect-ratio: 8/5;
+
                 }
                 img {
                     width: 100%;
                     height: 100%;
+                    border-radius: 0.8rem;
                 }
             }
 
@@ -153,22 +160,13 @@
                 <div class="splide__track">
                     <ul class="splide__list">
                         <li class="splide__slide">
-                            <img
-                                src="/animated-nake/images/placeholder2.png"
-                                alt=""
-                            />
+                            <Image src={Mobiletread} alt="Mobile Tread Design" />
                         </li>
                         <li class="splide__slide">
-                            <img
-                                src="/animated-nake/images/placeholder2.png"
-                                alt=""
-                            />
+                            <Image src={Kings} alt="Kings Design" />
                         </li>
                         <li class="splide__slide">
-                            <img
-                                src="/animated-nake/images/placeholder2.png"
-                                alt=""
-                            />
+                            <Image src={VeiCenter} alt="Vei Center Design" />
                         </li>
                     </ul>
                 </div>
@@ -204,9 +202,10 @@
     var splide = new Splide(".splide", {
         arrows: false,
         pagination: false,
-        autoplay: false,
+        autoplay: true,
         lazyload: true,
         rewind: true,
+        pauseOnHover: true
     });
     const bar = splide.root.querySelector(
         ".my-slider-progress-bar",
