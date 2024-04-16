@@ -1,5 +1,6 @@
 ---
-
+import { Image } from "astro:assets";
+import Placeholder from "../images/placeholder2.png";
 ---
 
 <style lang="scss">
@@ -149,22 +150,13 @@
                 <div class="splide__track">
                     <ul class="splide__list">
                         <li class="splide__slide">
-                            <img
-                                src="/animated-nake/images/placeholder2.png"
-                                alt=""
-                            />
+                            <Image src={Placeholder} alt="placeholder"/>
                         </li>
                         <li class="splide__slide">
-                            <img
-                                src="/animated-nake/images/placeholder2.png"
-                                alt=""
-                            />
+                            <Image src={Placeholder} alt="placeholder"/>
                         </li>
                         <li class="splide__slide">
-                            <img
-                                src="/animated-nake/images/placeholder2.png"
-                                alt=""
-                            />
+                            <Image src={Placeholder} alt="placeholder"/>
                         </li>
                     </ul>
                 </div>
