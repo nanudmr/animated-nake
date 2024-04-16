@@ -1,0 +1,199 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+import { Image } from "astro:assets";
+
+import BackArrow from "../../public/icons/long-red-back-arrow.svg";
+import DoubleArrow from "./../../public/icons/DoubleArrow.svg";
+const title = "Contact page";
+---
+
+<style lang="scss">
+    .contact {
+        background-color: #f3f3f3;
+        padding-top: 8rem;
+        padding-bottom: 6.4rem;
+    }
+
+    .contact-header {
+        padding: 0 1.6rem;
+        padding-bottom: 1.2rem;
+
+
+        border-bottom: 1px solid #C6C6C6;
+
+        a {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+
+            p {
+                font-family: "spline-sans-mono", sans-serif;
+                font-size: 1rem;
+                line-height: 1.6rem;
+                color: #6b6b6b;
+            }
+        }
+    }
+
+    .contact-body{
+        padding: 0 0.6rem;
+    
+        margin-top: 3.2rem;
+    }
+
+    h1 {
+
+        font-size: 4rem;
+        line-height: 4.8rem;
+        text-align: center;
+    }
+
+    form {
+        padding: 3.2rem 1.6rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2.4rem;
+        background-color: #eaeaea;
+        border-radius: 1.6rem;
+        margin-top: 6.4rem;
+        padding-bottom: 6.4rem;
+    }
+
+    form div {
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid #c6c6c6;
+    }
+
+    label {
+        font-family: "spline-sans-mono", sans-serif;
+        font-size: 1rem;
+        line-height: 1.6rem;
+        margin-bottom: 0.8rem;
+    }
+
+    input {
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        background-color: #eaeaea;
+        margin-bottom: 1.2rem;
+    }
+
+    input::placeholder {
+        color: #c6c6c6;
+    }
+
+    button.free-consulting {
+        background-color: #1b1b1b;
+        display: flex;
+        align-items: center;
+        margin-top: 3.2rem;
+        border-radius: 0.4rem;
+        z-index: 100;
+        align-self: flex-start;
+
+        p {
+            padding: 1.6rem;
+            color: #c6c6c6;
+            font-size: 1.2rem;
+            line-height: 2.2rem;
+            border-right: 1px solid #3a3a3a;
+        }
+
+        img {
+            margin: 1.6rem;
+            z-index: 100;
+        }
+    }
+
+    @media screen and (min-width: 600px) {
+        .contact-header{
+            padding: 0 1.4rem;
+            padding-bottom: 1.2rem;
+        }
+
+        .contact-body{
+            padding: 0 12.8rem;
+        }
+
+        h1{
+            font-size: 6rem;
+            line-height: 7.2rem;
+        }
+    }
+
+    @media screen and (min-width: 900px){
+        .contact-header{
+            padding: 0 2.4rem;
+            padding-bottom: 1.2rem;
+        }
+        h1{
+            font-size: 9.6rem;
+            line-height: 10.4rem;
+        }
+
+        form{
+            max-width: 92rem;
+
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+    }
+</style>
+
+<BaseLayout title={title}>
+    <div class="contact">
+        <div class="contact-header">
+            <a href="/">
+                <Image src={BackArrow} alt="long red back arrow" />
+                <p>GO BACK</p>
+            </a>
+        </div>
+
+        <div class="contact-body">
+            <h1 class="contact-heading">Get in touch with us</h1>
+
+            <form action="https://submit-form.com/HYVqxhvSb">
+                <div class="name">
+                    <label for="name">NAME</label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Your name"
+                        required
+                    />
+                </div>
+
+                <div class="email">
+                    <label for="email">EMAIL</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Your email"
+                        required
+                    />
+                </div>
+
+                <div class="phone">
+                    <label for="phone">PHONE / WHATSAPP NUMBER</label>
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="Your phone number"
+                        required
+                    />
+                </div>
+
+                <button class="free-consulting" type="submit">
+                    <p>SEND MESSAGE</p>
+                    <Image src={DoubleArrow} alt="double arrow" />
+                </button>
+            </form>
+        </div>
+    </div>
+</BaseLayout>
