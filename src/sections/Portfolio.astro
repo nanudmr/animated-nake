@@ -2,6 +2,13 @@
 import { Image } from "astro:assets";
 import LongArrowRed from "../assets/icons/long-arrow-red.svg";
 import Placeholder from "../assets/images/placeholder2.png";
+import Lunatic from "../assets/images/lunatic-show.jpg";
+import ArtKillers from "../assets/images/artkillers-show.jpg";
+import Escalen from "../assets/images/escalen-show.jpg";
+import Vei from "../assets/images/vei-show.jpg";
+import RobertVentures from "../assets/images/robertventures-show.jpg";
+import MobileTread from "../assets/images/mobiletread-show.jpg";
+
 ---
 
 <style lang="scss">
@@ -70,6 +77,7 @@ import Placeholder from "../assets/images/placeholder2.png";
         img {
             width: 100%;
             height: 100%;
+            border-radius: 0.8rem;
         }
     }
 
@@ -125,13 +133,22 @@ import Placeholder from "../assets/images/placeholder2.png";
                 <div class="splide__track">
                     <ul class="splide__list">
                         <li class="splide__slide">
-                            <Image src={Placeholder} alt="placeholder"/>
+                            <Image src={Lunatic} alt="placeholder"/>
                         </li>
                         <li class="splide__slide">
-                            <Image src={Placeholder} alt="placeholder"/>
+                            <Image src={ArtKillers} alt="placeholder"/>
                         </li>
                         <li class="splide__slide">
-                            <Image src={Placeholder} alt="placeholder"/>
+                            <Image src={Escalen} alt="placeholder"/>
+                        </li>
+                        <li class="splide__slide">
+                            <Image src={Vei} alt="placeholder"/>
+                        </li>
+                        <li class="splide__slide">
+                            <Image src={RobertVentures} alt="placeholder"/>
+                        </li>
+                        <li class="splide__slide">
+                            <Image src={MobileTread} alt="placeholder"/>
                         </li>
                     </ul>
                 </div>
@@ -148,9 +165,10 @@ import Placeholder from "../assets/images/placeholder2.png";
             var splide1 = new Splide(".splide.portfolio-slider", {
                 arrows: false,
                 pagination: false,
-                autoplay: false,
+                autoplay: true,
                 lazyload: true,
                 rewind: true,
+                pauseOnHover: true
             });
             const bar = splide1.root.querySelector(
                 ".my-slider-progress-bar.portfolio-progress-bar",
