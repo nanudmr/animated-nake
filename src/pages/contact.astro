@@ -19,8 +19,7 @@ const title = "Contact page";
         padding: 0 1.6rem;
         padding-bottom: 1.2rem;
 
-
-        border-bottom: 1px solid #C6C6C6;
+        border-bottom: 1px solid #c6c6c6;
 
         a {
             display: flex;
@@ -36,14 +35,13 @@ const title = "Contact page";
         }
     }
 
-    .contact-body{
+    .contact-body {
         padding: 0 0.6rem;
-    
+
         margin-top: 3.2rem;
     }
 
     h1 {
-
         font-size: 4rem;
         line-height: 4.8rem;
         text-align: center;
@@ -108,45 +106,44 @@ const title = "Contact page";
     }
 
     @media screen and (min-width: 600px) {
-        .contact-header{
+        .contact-header {
             padding: 0 1.4rem;
             padding-bottom: 1.2rem;
         }
 
-        .contact-body{
+        .contact-body {
             padding: 0 12.8rem;
         }
 
-        h1{
+        h1 {
             font-size: 6rem;
             line-height: 7.2rem;
         }
     }
 
-    @media screen and (min-width: 900px){
-        .contact-header{
+    @media screen and (min-width: 900px) {
+        .contact-header {
             padding: 0 2.4rem;
             padding-bottom: 1.2rem;
         }
-        h1{
+        h1 {
             font-size: 9.6rem;
             line-height: 10.4rem;
         }
 
-        form{
+        form {
             max-width: 92rem;
 
             margin-left: auto;
             margin-right: auto;
         }
-
     }
 </style>
 
 <BaseLayout title={title}>
     <div class="contact">
         <div class="contact-header">
-            <a href="/">
+            <a href="/animated-nake/">
                 <Image src={BackArrow} alt="long red back arrow" />
                 <p>GO BACK</p>
             </a>
@@ -188,6 +185,12 @@ const title = "Contact page";
                         required
                     />
                 </div>
+
+                <input
+                    type="hidden"
+                    name="_redirect"
+                    value="http://localhost:4321/animated-nake/"
+                />
 
                 <button class="free-consulting" type="submit">
                     <p>SEND MESSAGE</p>
