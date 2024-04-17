@@ -7,7 +7,6 @@ import Escalen from "../assets/images/escalen-show.jpg";
 import Vei from "../assets/images/vei-show.jpg";
 import RobertVentures from "../assets/images/robertventures-show.jpg";
 import MobileTread from "../assets/images/mobiletread-show.jpg";
-
 ---
 
 <style lang="scss">
@@ -30,6 +29,7 @@ import MobileTread from "../assets/images/mobiletread-show.jpg";
 
     .portfolio-content {
         padding: 0 1.2rem;
+        overflow: hidden;
         h2 {
             margin: 3.2rem 0;
             font-size: 4rem;
@@ -68,6 +68,10 @@ import MobileTread from "../assets/images/mobiletread-show.jpg";
             height: 2px;
             transition: width 400ms ease;
             width: 0;
+        }
+
+        .splide__track {
+            overflow: visible;
         }
 
         li.splide__slide {
@@ -132,22 +136,22 @@ import MobileTread from "../assets/images/mobiletread-show.jpg";
                 <div class="splide__track">
                     <ul class="splide__list">
                         <li class="splide__slide">
-                            <Image src={Lunatic} alt="placeholder"/>
+                            <Image src={Lunatic} alt="placeholder" />
                         </li>
                         <li class="splide__slide">
-                            <Image src={ArtKillers} alt="placeholder"/>
+                            <Image src={ArtKillers} alt="placeholder" />
                         </li>
                         <li class="splide__slide">
-                            <Image src={Escalen} alt="placeholder"/>
+                            <Image src={Escalen} alt="placeholder" />
                         </li>
                         <li class="splide__slide">
-                            <Image src={Vei} alt="placeholder"/>
+                            <Image src={Vei} alt="placeholder" />
                         </li>
                         <li class="splide__slide">
-                            <Image src={RobertVentures} alt="placeholder"/>
+                            <Image src={RobertVentures} alt="placeholder" />
                         </li>
                         <li class="splide__slide">
-                            <Image src={MobileTread} alt="placeholder"/>
+                            <Image src={MobileTread} alt="placeholder" />
                         </li>
                     </ul>
                 </div>
@@ -162,12 +166,17 @@ import MobileTread from "../assets/images/mobiletread-show.jpg";
 
         <script>
             var splide1 = new Splide(".splide.portfolio-slider", {
+                type: "loop",
                 arrows: false,
                 pagination: false,
                 autoplay: true,
                 lazyload: true,
                 rewind: true,
-                pauseOnHover: true
+                interval: 4000,
+                speed: 2000,
+                padding: "5rem",
+                gap: "2.4rem",
+                focus: "center",
             });
             const bar = splide1.root.querySelector(
                 ".my-slider-progress-bar.portfolio-progress-bar",

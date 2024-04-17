@@ -1,10 +1,8 @@
 ---
 import { Image } from "astro:assets";
-import Mobiletread from "../assets/images/mobile-tread-design.jpg"
-import Kings from "../assets/images/kings-designs.jpg"
-import VeiCenter from "../assets/images/vei-center-design.jpg"
-
-
+import Mobiletread from "../assets/images/mobile-tread-design.jpg";
+import Kings from "../assets/images/kings-designs.jpg";
+import VeiCenter from "../assets/images/vei-center-design.jpg";
 ---
 
 <style lang="scss">
@@ -15,6 +13,8 @@ import VeiCenter from "../assets/images/vei-center-design.jpg"
         margin-top: 6.4rem;
 
         border-radius: 0.8rem;
+
+        overflow: hidden;
 
         hr {
             border: 0.5px solid #3a3a3a;
@@ -74,12 +74,16 @@ import VeiCenter from "../assets/images/vei-center-design.jpg"
                     width: 0;
                 }
 
+                .splide__track{
+                    overflow: visible;
+                }
+
                 li.splide__slide {
                     aspect-ratio: 8/5;
-
+                    // max-height: 300px;
                 }
                 img {
-                    width: 100%;
+                    width: auto;
                     height: 100%;
                     border-radius: 0.8rem;
                 }
@@ -134,10 +138,6 @@ import VeiCenter from "../assets/images/vei-center-design.jpg"
                 .slider {
                     width: 75vw;
                     max-width: 128rem;
-
-                    li.splide__slide {
-                        // padding: 6.4rem;
-                    }
                 }
             }
         }
@@ -160,7 +160,10 @@ import VeiCenter from "../assets/images/vei-center-design.jpg"
                 <div class="splide__track">
                     <ul class="splide__list">
                         <li class="splide__slide">
-                            <Image src={Mobiletread} alt="Mobile Tread Design" />
+                            <Image
+                                src={Mobiletread}
+                                alt="Mobile Tread Design"
+                            />
                         </li>
                         <li class="splide__slide">
                             <Image src={Kings} alt="Kings Design" />
@@ -200,12 +203,18 @@ import VeiCenter from "../assets/images/vei-center-design.jpg"
     // import { Splide } from "./../../public/splide-4.1.3";
 
     var splide = new Splide(".splide", {
+        type: "loop",
         arrows: false,
         pagination: false,
-        autoplay: true,
+        autoplay: false,
         lazyload: true,
         rewind: true,
-        pauseOnHover: true
+        interval: 4000,
+        speed: 2000,
+        padding: "5rem",
+        gap: "2.4rem",
+        focus: "center",
+
     });
     const bar = splide.root.querySelector(
         ".my-slider-progress-bar",
